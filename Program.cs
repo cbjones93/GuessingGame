@@ -18,7 +18,7 @@ void main()
             if (secretNumber == int.Parse(userGuess))
             {
                 Console.WriteLine("WOW! You're a mindreader!");
-
+                numberOfGuesses = 5;
 
             }
             else
