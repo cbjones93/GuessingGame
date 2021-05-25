@@ -6,10 +6,13 @@ void main()
     difficulty();
     void difficulty()
     {
+        Console.WriteLine("WELCOME TO THE GUESSING GAME!!!");
+           Console.WriteLine("-------------------------------------------");
         Console.WriteLine("Choose a diffculty:");
         Console.WriteLine("1) Easy");
         Console.WriteLine("2) Medium");
         Console.WriteLine("3) Hard");
+        Console.WriteLine("4) Cheater");
         string diffcultySelection = Console.ReadLine();
         int numberOfGuesses = 0;
         int secretNumber = new Random().Next(1, 100);
@@ -151,10 +154,47 @@ void main()
                 Guess();
             }
         }
+        else if (int.Parse(diffcultySelection) == 4)
+        {
+            while (true)
+            {
+
+                Console.WriteLine("What is the secret number?");
+                Console.WriteLine("-------------------------------------");
+                string userGuess = Console.ReadLine();
+
+
+                void Guess()
+                {
+                    if (secretNumber == int.Parse(userGuess))
+                    {
+                        Console.WriteLine("WOW! You're a mindreader! (although you cheated)");
+                        Console.WriteLine("---------------------------------------------");
+                        main();
+                    }
+                    else
+                    {
+                        if (int.Parse(userGuess) > secretNumber)
+                        {
+                            Console.WriteLine("NOPE, Your guess was too high!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("NOPE, Your guess was too low!");
+                        }
+                        Console.Write("Number of guesses now is ");
+                        Console.WriteLine(numberOfGuesses);
+                    }
+                }
+
+                Guess();
+
+            }
+        }
         else
         {
-            Console.WriteLine("Invalid Entry Please Choose A Number Between 1-3");
-            difficulty();
+            Console.WriteLine("Please select a number 1-4 to play the game");
         }
+        difficulty();
     }
 }
