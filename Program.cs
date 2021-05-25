@@ -4,7 +4,7 @@ main();
 void main()
 {
     int numberOfGuesses = 0;
-    int secretNumber = new Random().Next(1,100);
+    int secretNumber = new Random().Next(1, 100);
     while (numberOfGuesses < 4)
     {
 
@@ -23,12 +23,19 @@ void main()
             }
             else
             {
-                Console.WriteLine("NOPE, Try again!");
+                if (int.Parse(userGuess) > secretNumber)
+                {
+                    Console.WriteLine("NOPE, Your guess was too high!");
+                }
+                else {
+                    Console.WriteLine("NOPE, Your guess was too low!");
+                }
+
                 numberOfGuesses++;
                 Console.Write("Number of guesses now is ");
                 Console.WriteLine(numberOfGuesses);
                 Console.Write("Guesses left: ");
-                Console.WriteLine(4-(numberOfGuesses));
+                Console.WriteLine(4 - (numberOfGuesses));
             }
             if (numberOfGuesses == 4)
             {
