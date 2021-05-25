@@ -25,6 +25,8 @@ void main()
             {
                 Console.WriteLine("NOPE, Try again!");
                 numberOfGuesses++;
+                Console.Write("You get 4 guesses. Number of guesses now is ");
+                Console.WriteLine(numberOfGuesses);
             }
             if (numberOfGuesses == 4)
             {
