@@ -4,7 +4,7 @@ main();
 void main()
 {
     int numberOfGuesses = 0;
-    int secretNumber = 42;
+    int secretNumber = new Random().Next(1,100);
     while (numberOfGuesses < 4)
     {
 
@@ -25,12 +25,16 @@ void main()
             {
                 Console.WriteLine("NOPE, Try again!");
                 numberOfGuesses++;
-                Console.Write("You get 4 guesses. Number of guesses now is ");
+                Console.Write("Number of guesses now is ");
                 Console.WriteLine(numberOfGuesses);
+                Console.Write("Guesses left: ");
+                Console.WriteLine(4-(numberOfGuesses));
             }
             if (numberOfGuesses == 4)
             {
                 Console.Clear();
+                Console.Write("The secret number was ");
+                Console.WriteLine(secretNumber);
                 Console.WriteLine("You're out of guesses! Prepare for doom!");
 
             }
